@@ -10,7 +10,7 @@ class ModelTests(TestCase):
         password = '123'
         user = get_user_model().objects.create_user(
             email=email,
-            password=password
+            password=password,
         )
 
         self.assertEqual(user.email, email)
@@ -32,7 +32,7 @@ class ModelTests(TestCase):
         """Test creating a new superuser"""
         user = get_user_model().objects.create_superuser(
             'test@gmail.com',
-            'test123'
+            'test123',
         )
 
         self.assertTrue(user.is_superuser)
